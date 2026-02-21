@@ -59,7 +59,9 @@ function Cart() {
 
               {/* Product Info */}
               <div style={styles.info}>
-                <h4>{item.title.substring(0, 40)}...</h4>
+                <h4 style={{ marginBottom: "5px", fontSize: "15px" }}>
+                  {item.title?.substring(0, 40)}...
+                </h4>
                 <p>₹{item.price}</p>
               </div>
 

@@ -2,74 +2,74 @@ import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 
 function Home() {
-    const images = [
-        "https://images.unsplash.com/photo-1472851294608-062f824d29cc", 
-  "https://images.unsplash.com/photo-1606144042614-b2417e99c4e3", 
-  "https://images.unsplash.com/photo-1607082349566-187342175e2f", 
-  "https://images.unsplash.com/photo-1607082350899-7e105aa886ae",  
-   "https://images.unsplash.com/photo-1518441902113-c7f38e2f99d5" ,   
-  "https://images.unsplash.com/photo-1542838132-92c53300491e",    
-  "https://images.unsplash.com/photo-1490481651871-ab68de25d43d?auto=format&fit=crop&w=1200&q=80", 
-  "https://images.unsplash.com/photo-1512436991641-6745cdb1723f?auto=format&fit=crop&w=1200&q=80",  
-   "https://images.unsplash.com/photo-1445205170230-053b83016050?auto=format&fit=crop&w=1200&q=80",  
-  "https://images.unsplash.com/photo-1503342217505-b0a15ec3261c?auto=format&fit=crop&w=1200&q=80"   
-]; 
-    
+  const images = [
+    "https://images.unsplash.com/photo-1472851294608-062f824d29cc",
+    "https://images.unsplash.com/photo-1606144042614-b2417e99c4e3",
+    "https://images.unsplash.com/photo-1607082349566-187342175e2f",
+    "https://images.unsplash.com/photo-1607082350899-7e105aa886ae",
+    "https://images.unsplash.com/photo-1542291026-7eec264c27ff?auto=format&fit=crop&w=1600&q=80",
+    "https://images.unsplash.com/photo-1542838132-92c53300491e",
+    "https://images.unsplash.com/photo-1490481651871-ab68de25d43d?auto=format&fit=crop&w=1200&q=80",
+    "https://images.unsplash.com/photo-1512436991641-6745cdb1723f?auto=format&fit=crop&w=1200&q=80",
+    "https://images.unsplash.com/photo-1445205170230-053b83016050?auto=format&fit=crop&w=1200&q=80",
+    "https://images.unsplash.com/photo-1503342217505-b0a15ec3261c?auto=format&fit=crop&w=1200&q=80"
+  ];
 
-    const [current, setCurrent] = useState(0);
 
-    // Auto Slide
-    useEffect(() => {
-        const interval = setInterval(() => {
-            setCurrent((prev) => (prev + 1) % images.length);
-        }, 3000);
+  const [current, setCurrent] = useState(0);
 
-        return () => clearInterval(interval);
-    }, []);
+  // Auto Slide
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrent((prev) => (prev + 1) % images.length);
+    }, 3000);
 
-    const nextSlide = () => {
-        setCurrent((prev) => (prev + 1) % images.length);
-    };
+    return () => clearInterval(interval);
+  }, []);
 
-    const prevSlide = () => {
-        setCurrent((prev) =>
-            prev === 0 ? images.length - 1 : prev - 1
-        );
-    };
+  const nextSlide = () => {
+    setCurrent((prev) => (prev + 1) % images.length);
+  };
 
-    return (
-        <div className="home-container">
-            {/* Slider */}
-            <div className="slider">
-                {images.map((img, index) => (
-                    <div
-                        key={index}
-                        className={`slide ${index === current ? "active" : ""}`}
-                    >
-                        <img src={img} alt="slide" />
-                    </div>
-                ))}
+  const prevSlide = () => {
+    setCurrent((prev) =>
+      prev === 0 ? images.length - 1 : prev - 1
+    );
+  };
 
-                {/* Arrows */}
-                <button className="arrow left" onClick={prevSlide}>
-                    ❮
-                </button>
-                <button className="arrow right" onClick={nextSlide}>
-                    ❯
-                </button>
+  return (
+    <div className="home-container">
+      {/* Slider */}
+      <div className="slider">
+        {images.map((img, index) => (
+          <div
+            key={index}
+            className={`slide ${index === current ? "active" : ""}`}
+          >
+            <img src={img} alt="slide" />
+          </div>
+        ))}
 
-                {/* Hero Text */}
-                <div className="hero-overlay">
-                    <h1>Premium Shopping Experience</h1>
-                    <p>Modern React + Redux E-Commerce Website</p>
-                    <Link to="/shop" className="btn">
-                        Shop Now
-                    </Link>
-                </div>
-            </div>
+        {/* Arrows */}
+        <button className="arrow left" onClick={prevSlide}>
+          ❮
+        </button>
+        <button className="arrow right" onClick={nextSlide}>
+          ❯
+        </button>
 
-            {/* CSS Inside */}
-            <style>{`
+        {/* Hero Text */}
+        <div className="hero-overlay">
+          <h1>Premium Shopping Experience</h1>
+          <p>Modern React + Redux E-Commerce Website</p>
+          <Link to="/shop" className="btn">
+            Shop Now
+          </Link>
+        </div>
+      </div>
+
+      {/* CSS Inside */}
+      <style>{`
         .home-container {
           width: 100%;
           overflow: hidden;
@@ -100,27 +100,75 @@ function Home() {
           opacity: 1;
         }
 
-        .hero-overlay {
-          position: absolute;
-          top: 50%;
-          left: 50%;
-          transform: translate(-50%, -50%);
-          text-align: center;
-          color: white;
-          animation: fadeUp 1.5s ease;
-        }
+/* ===== Premium Hero Simple Upgrade ===== */
 
-        .hero-overlay h1 {
-          font-size: 3rem;
-          margin-bottom: 15px;
-          letter-spacing: 2px;
-        }
+.hero-overlay {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  color: white;
+  animation: fadeUp 1.5s ease forwards;
+  opacity: 0;
+}
 
-        .hero-overlay p {
-          font-size: 1.2rem;
-          margin-bottom: 20px;
-        }
+/* Heading */
+.hero-overlay h1 {
+  font-size: 3.2rem;   /* bigger */
+  font-weight: 700;
+  letter-spacing: 3px;
+  margin-bottom: 18px;
+  text-transform: uppercase;
+  text-shadow: 0 6px 20px rgba(0,0,0,0.6);
+}
 
+/* Paragraph */
+.hero-overlay p {
+  font-size: 1.3rem;   /* bigger */
+  margin-bottom: 25px;
+  color: #f5f5f5;
+  letter-spacing: 1px;
+}
+
+/* Button */
+.hero-overlay .btn {
+  padding: 12px 32px;
+  border-radius: 35px;
+  font-size: 16px;
+  font-weight: 600;
+  background: linear-gradient(45deg,#ff6b6b,#f06595);
+  color: white;
+  text-decoration: none;
+  transition: 0.3s ease;
+}
+
+.hero-overlay .btn:hover {
+  transform: scale(1.08);
+}
+
+/* Smooth Fade Up */
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translate(-50%, -40%);
+  }
+  to {
+    opacity: 1;
+    transform: translate(-50%, -50%);
+  }
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+  .hero-overlay h1 {
+    font-size: 2rem;
+  }
+
+  .hero-overlay p {
+    font-size: 1rem;
+  }
+}
         .btn {
           padding: 12px 25px;
           background: linear-gradient(45deg,#ff6b6b,#f06595);
@@ -185,8 +233,8 @@ function Home() {
           }
         }
       `}</style>
-        </div>
-    );
+    </div>
+  );
 }
 
 export default Home;

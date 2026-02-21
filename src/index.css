@@ -1,7 +1,70 @@
+/* ===== Global Fix ===== */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  overflow-x: hidden;
+  width: 100%;
+}
+
 body {
   font-family: 'Poppins', sans-serif;
   background: #f8f9fc;
 }
+
+/* ===== Navbar ===== */
+
+.navbar {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  height: 60px;      
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding:  0 25px;            
+  background: linear-gradient(45deg,#1e3c72,#2a5298);
+  color: white;
+  z-index: 1000;
+}
+
+/* Logo */
+.logo {
+  font-size: 22px;
+  font-weight: 600;
+  letter-spacing: 1px;
+}
+
+/* Nav links */
+.nav-links {
+  display: flex;
+  gap: 25px;
+  list-style: none;
+}
+
+.nav-links li a {
+  color: white;
+  text-decoration: none;
+  font-size: 15px;
+  transition: 0.3s ease;
+}
+
+.nav-links li a:hover {
+  color: #ffd700;
+}
+
+/* ===== Hamburger Icon ===== */
+
+.menu-icon {
+  display: none;
+  font-size: 26px;
+  cursor: pointer;
+}
+/* ===== Product Grid ===== */
 
 .product-grid {
   display: grid;
@@ -19,9 +82,16 @@ body {
 }
 
 .card:hover {
-  transform: translateY(-10px);
+  transform: translateY(-8px);
   box-shadow: 0 10px 25px rgba(0,0,0,0.1);
 }
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+/* ===== Buttons ===== */
 
 button {
   background: linear-gradient(45deg,#667eea,#764ba2);
@@ -32,40 +102,11 @@ button {
   cursor: pointer;
 }
 
-@keyframes fadeIn {
-  from { opacity: 0; transform: translateY(20px); }
-  to { opacity: 1; transform: translateY(0); }
-}
-.navbar {
-  display: flex;
-  justify-content: space-between;
-  padding: 15px 40px;
-  background: linear-gradient(45deg,#1e3c72,#2a5298);
-  color: white;
-  align-items: center;
-}
-
-.navbar ul {
-  display: flex;
-  gap: 25px;
-  list-style: none;
-}
-
-.navbar a {
-  color: white;
-  text-decoration: none;
-  transition: 0.3s;
-}
-
-.navbar a:hover {
-  color: #ffd700;
-}
-/* button */
-
+/* ===== Custom Buttons ===== */
 
 .btns {
   display: flex;
-  gap: 12px;   /* 👈 yaha se gap control hoga */
+  gap: 12px;
   margin-top: 10px;
 }
 
@@ -81,17 +122,12 @@ button {
 
 .view-btn:hover {
   background: #bbb;
-  color: black;
-  font-weight: bold;
 }
 
-
 .premium-btn {
-  padding: 5px px;
-  background: linear-gradient(135deg, #d1c51d, #d1c631);
-  color: rgb(29, 27, 27);
-  border: none;
-  
+  padding: 6px 14px;   
+  background: linear-gradient(135deg,#d1c51d,#d1c631);
+  color: #1d1b1b;
   border-radius: 8px;
   cursor: pointer;
   font-weight: 600;
@@ -99,57 +135,53 @@ button {
 }
 
 .premium-btn:hover {
-  background: linear-gradient(135deg, #b9f513, #9cbb13);
-  
   transform: scale(1.05);
 }
 
-
-@media (max-width: 375px) {
-  body {
-    overflow-x: hidden;
-  }
-
-  .navbar {
-    flex-direction: column;
-    padding: 10px;
-    text-align: center;
-  }
-
-  .navbar ul {
-    flex-direction: column;
-    gap: 8px;
-  }
-
-  .product-grid {
-    grid-template-columns: 1fr;
-    padding: 8px;
-    gap: 10px;
-  }
-
-  .card {
-    width: 100%;
-    padding: 10px;
-  }
-
-  button {
-    width: 100%;
-    padding: 6px 10px;
-  }
-}
-/* trending imaegs */
-@keyframes pulse {
-  0% { transform: scale(1); }
-  50% { transform: scale(1.1); }
-  100% { transform: scale(1); }
-}
-
+/* ===== Trending ===== */
 
 .trending-card {
   transition: all 0.3s ease;
 }
 
 .trending-card:hover {
-  transform: translateY(-12px);
-  box-shadow: 0 25px 45px rgba(0,0,0,0.25);
+  transform: translateY(-10px);
+  box-shadow: 0 20px 40px rgba(0,0,0,0.2);
 }
+
+/* ===== Animation ===== */
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(15px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* ===== Mobile Responsive ===== */
+
+@media (max-width: 700px) {
+
+  @media (max-width: 768px) {
+
+  .menu-icon {
+    display: block;   
+  }
+
+  .nav-links {
+    position: fixed;
+    top: 60px;
+    left: -100%;
+    width: 220px;
+    height: 100vh;
+    background: #111;
+    flex-direction: column;
+    padding-top: 30px;
+    gap: 20px;
+    transition: 0.4s ease;
+  }
+
+  .nav-links.active {
+    left: 0;  
+  }
+
+}
+  }
