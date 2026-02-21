@@ -11,6 +11,7 @@ import Account from "./pages/Account";
 import About from "./pages/About";
 import ProtectedRoute from "./components/ProtectedRoute";
 import Trending from "./components/TrendingDetails";
+import Payment from "./pages/Payment";
 
 function App() {
   return (
@@ -18,17 +19,18 @@ function App() {
       <Navbar />
 
       <Routes>
-       <Route path="/" element={<Home />} />
+        <Route path="/" element={<Home />} />
         <Route path="/shop" element={<Shop />} />
         <Route path="/product/:id" element={<ProductDetails />} />
         <Route path="/about" element={<About />} />
         <Route path="/cart" element={<Cart />} />
         <Route path="/login" element={<Login />} />
         <Route path="/signup" element={<Signup />} />
-        
-<Route path="/trending" element={<Trending />} />
 
-     
+        <Route path="/trending" element={<Trending />} />
+        <Route path="/payment" element={<Payment />} />
+
+
 
         {/* Protected Account Page */}
         <Route
