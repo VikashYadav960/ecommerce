@@ -68,7 +68,7 @@ function Home() {
         </div>
       </div>
 
-      {/* CSS Inside */}
+ 
       <style>{`
         .home-container {
           width: 100%;
@@ -77,7 +77,7 @@ function Home() {
 
         .slider {
           position: relative;
-          height: 90vh;
+          height: 100vh;
           width: 100%;
         }
 
