@@ -145,6 +145,7 @@ function Home() {
 
 .hero-overlay .btn:hover {
   transform: scale(1.08);
+  background: red;
 }
 
 /* Smooth Fade Up */
@@ -182,7 +183,7 @@ function Home() {
 
         .btn:hover {
           transform: scale(1.1);
-          backgroun:red;
+          
           box-shadow: 0 10px 20px rgba(0,0,0,0.3);
         }
 

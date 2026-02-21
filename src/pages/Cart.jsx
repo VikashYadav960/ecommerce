@@ -123,12 +123,12 @@ const styles = {
     minHeight: "100vh",
     display: "flex",
     justifyContent: "center",
-    padding: "40px",
+    padding: "100px 15px 40px 15px  ",
     background: "linear-gradient(to right, #f4f6fb, #eef2f7)"
   },
 
   cartBox: {
-    width: "80%",
+    width: "100%",
     maxWidth: "1000px",
     padding: "30px",
     background: "#fff",
@@ -149,12 +149,12 @@ const styles = {
 
   cartItem: {
     display: "flex",
+    flexWrap: "wrap",
     alignItems: "center",
-    gap: "20px",
+    gap: "15px",
     padding: "20px 0",
     borderBottom: "1px solid #eee"
   },
-
   image: {
     width: "90px",
     height: "90px",
@@ -189,9 +189,9 @@ const styles = {
     color: "white",
     border: "none",
     borderRadius: "6px",
-    cursor: "pointer"
+    cursor: "pointer",
+    marginTop: "10px"
   },
-
   totalSection: {
     marginTop: "30px",
     textAlign: "right"
