@@ -184,7 +184,7 @@ body {
 
         .slider {
           position: relative;
-          height: 90vh;
+          height: 100vh;
           width: 100%;
         }
 
