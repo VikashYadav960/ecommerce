@@ -1,0 +1,155 @@
+body {
+  font-family: 'Poppins', sans-serif;
+  background: #f8f9fc;
+}
+
+.product-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px,1fr));
+  gap: 20px;
+  padding: 20px;
+}
+
+.card {
+  background: white;
+  border-radius: 12px;
+  padding: 15px;
+  transition: 0.3s ease;
+  animation: fadeIn 0.8s ease-in;
+}
+
+.card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+}
+
+button {
+  background: linear-gradient(45deg,#667eea,#764ba2);
+  border: none;
+  color: white;
+  padding: 8px 12px;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  padding: 15px 40px;
+  background: linear-gradient(45deg,#1e3c72,#2a5298);
+  color: white;
+  align-items: center;
+}
+
+.navbar ul {
+  display: flex;
+  gap: 25px;
+  list-style: none;
+}
+
+.navbar a {
+  color: white;
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+.navbar a:hover {
+  color: #ffd700;
+}
+/* button */
+
+
+.btns {
+  display: flex;
+  gap: 12px;   /* 👈 yaha se gap control hoga */
+  margin-top: 10px;
+}
+
+.view-btn {
+  padding: 8px 15px;
+  background: #ddd;
+  border-radius: 8px;
+  text-decoration: none;
+  color: black;
+  font-weight: 500;
+  transition: 0.3s;
+}
+
+.view-btn:hover {
+  background: #bbb;
+  color: black;
+  font-weight: bold;
+}
+
+
+.premium-btn {
+  padding: 5px px;
+  background: linear-gradient(135deg, #d1c51d, #d1c631);
+  color: rgb(29, 27, 27);
+  border: none;
+  
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: 0.3s ease;
+}
+
+.premium-btn:hover {
+  background: linear-gradient(135deg, #b9f513, #9cbb13);
+  
+  transform: scale(1.05);
+}
+
+
+@media (max-width: 375px) {
+  body {
+    overflow-x: hidden;
+  }
+
+  .navbar {
+    flex-direction: column;
+    padding: 10px;
+    text-align: center;
+  }
+
+  .navbar ul {
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .product-grid {
+    grid-template-columns: 1fr;
+    padding: 8px;
+    gap: 10px;
+  }
+
+  .card {
+    width: 100%;
+    padding: 10px;
+  }
+
+  button {
+    width: 100%;
+    padding: 6px 10px;
+  }
+}
+/* trending imaegs */
+@keyframes pulse {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.1); }
+  100% { transform: scale(1); }
+}
+
+
+.trending-card {
+  transition: all 0.3s ease;
+}
+
+.trending-card:hover {
+  transform: translateY(-12px);
+  box-shadow: 0 25px 45px rgba(0,0,0,0.25);
+}
