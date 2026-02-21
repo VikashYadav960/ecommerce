@@ -61,8 +61,6 @@ function Navbar() {
       {/* CSS */}
       <style>{`
 
-/* ===== Desktop Navbar ===== */
-
 .navbar {
   position: fixed;             
   top: 0;
@@ -73,7 +71,7 @@ function Navbar() {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 10px 20px;            
+  padding: 12px 20px;            
   background: #111;
   box-shadow: 0 4px 15px rgba(0,0,0,0.4);
 }
