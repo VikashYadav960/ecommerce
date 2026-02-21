@@ -5,6 +5,13 @@ import { useState } from "react";
 function Navbar() {
   const { cartItems } = useSelector((state) => state.cart);
   const [open, setOpen] = useState(false);
+  
+<style>
+  .navbar{
+    
+    
+  }
+</style>
 
   return (
     <>
@@ -66,7 +73,7 @@ function Navbar() {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 10px 25px;            
+  padding: 10px 20px;            
   background: #111;
   box-shadow: 0 4px 15px rgba(0,0,0,0.4);
 }
@@ -93,9 +100,10 @@ body {
   text-decoration: none;
   color: white;
   position: relative;
-  font-size: 17px;
-
+  font-size: 25px;
+  font-family: 'Montserrat', sans-serif;
   transition: 0.3s ease;
+   
 }
 
 /* Premium Underline */
