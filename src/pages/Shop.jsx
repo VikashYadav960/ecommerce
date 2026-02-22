@@ -152,17 +152,20 @@ function Shop() {
         }
 
         .card {
-          background: #311c07;
-          padding: 20px;
-          border-radius: 15px;
-          text-align: center;
-          transition: 0.3s;
-          }
-          
-          .card:hover {
-            transform: translateY(-8px);
-            box-shadow: 0 15px 25px rgba(0,0,0,0.6);
-        }
+  background: linear-gradient(145deg, #58440c, #2c2c2c);
+  padding: 20px;
+  color: #f5f5f5;
+  border-radius: 15px;
+  text-align: center;
+  transition: 0.3s ease;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5);
+  border: 1px solid rgba(255, 215, 0, 0.3);
+}
+
+.card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 12px 25px rgba(0, 0, 0, 0.7);
+}
         
         .card img {
           height: 180px;
@@ -188,7 +191,7 @@ function Shop() {
               `}</style>
 
 
-              </div>
-            );
-          }
+    </div>
+  );
+}
 export default Shop;

@@ -107,7 +107,7 @@ function TrendingDetails() {
             <h4 style={styles.title}>{item.title}</h4>
             <p style={styles.price}>₹{item.price}</p>
 
-            <button
+            <button className="bots"
               style={styles.button}
               onClick={() => handleAdd(item)}
             >
@@ -201,5 +201,7 @@ const styles = {
     color: "white",
     fontWeight: "600",
     cursor: "pointer"
-  }
+  },
+  
+ 
 };
